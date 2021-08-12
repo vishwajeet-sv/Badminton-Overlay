@@ -1,6 +1,7 @@
 import React, { useContext } from 'react';
-import BottomScoreImage from '../../Assets/Score.png';
-import BottomScoreTeamImage from '../../Assets/ScoreTeam.png';
+import BottomScoreImage from '../../Assets/BottomScoreSetPoints.png';
+import BottomScorePointsImage from '../../Assets/BottomScorePoints.png';
+import BottomScoreTeamImage from '../../Assets/BottomScoreName.png';
 import GameStateDataContext from '../../contexts/GameStateDataContext';
 import StreamDataContext from '../../contexts/StreamDataContext';
 import styles from './styles.module.css';
@@ -22,9 +23,14 @@ const BottomScore = () => {
         src={BottomScoreTeamImage}
         alt="bottomScoreImage"
       />
+      <img
+        className={styles.bottomScorePointsImage}
+        src={BottomScorePointsImage}
+        alt="bottomScoreImage"
+      />
       <div className={styles.homeTeamName}>
         {' '}
-        {TeamNameAbrivation(gameStateData.home_team_id, streamData)}
+        {gameStateData.layer_zero_game_state.p1_name}
       </div>
       <div className={styles.homeScoreGoals}>
         {' '}
@@ -53,14 +59,8 @@ const BottomScore = () => {
         {gameStateData.layer_zero_game_state.away_team_total}
       </div>
 
-      <div className={styles.quarter}>
-        {' '}
-        Q{gameStateData.layer_zero_game_state.quarter_number}
-      </div>
-
       <div className={styles.awayTeamName}>
-        {' '}
-        {TeamNameAbrivation(gameStateData.away_team_id, streamData)}
+        {gameStateData.layer_zero_game_state.p2_name}
       </div>
       {gameStateData.current_ads.banner_ad_url !== '' &&
         gameStateData.current_ads.banner_ad_size !== 'banner_full_screen' &&

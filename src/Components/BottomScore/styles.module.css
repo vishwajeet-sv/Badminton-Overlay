@@ -1,16 +1,21 @@
-.bottomScoreImage {
-  position: absolute;
-  top: 86vh;
-  left: 11vw;
-  width: 20vw;
-  height: 10vh;
-}
 .bottomScoreTeamImage {
   position: absolute;
-  top: 86vh;
-  left: 4.5vw;
-  width: 7vw;
-  height: 10vh;
+  top: 6vh;
+  left: 4vw;
+  width: 15vw;
+  height: 9.5vh;
+}
+.bottomScoreImage,
+.bottomScorePointsImage {
+  position: absolute;
+  top: 6vh;
+  left: 19vw;
+  width: 2.8vw;
+  height: 9.5vh;
+}
+.bottomScorePointsImage {
+  left: 21.9vw;
+  width: 3vw;
 }
 .homeTeamName,
 .awayTeamName,
@@ -19,20 +24,19 @@
 .homeScoreGoals,
 .awayScoreGoals,
 .homeScoreBehinds,
-.awayScoreBehinds,
-.quarter {
-  font-size: 3vh;
+.awayScoreBehinds {
+  font-size: 2.9vh;
   color: aliceblue;
   position: absolute;
-  left: 4vw;
-  top: 86.6vh;
-
-  font-family: poppin-Bold;
-  width: 8vw;
-  text-align: center;
+  left: 7vw;
+  top: 6.6vh;
+  width: 12vw;
+  text-align: start;
+  overflow: hidden;
+  text-transform: capitalize;
 }
 .awayTeamName {
-  top: 91.4vh;
+  top: 10.8vh;
 }
 .homeScore,
 .awayScore,
