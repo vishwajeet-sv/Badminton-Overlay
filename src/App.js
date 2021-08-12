@@ -21,8 +21,8 @@ function App() {
   const socketRef = useRef({ socket: null });
 
   const location = window.location.pathname;
-  // const id = location.substring(1);
-  const id = '6114d85e09e7b4f566acec8e';
+  const id = location.substring(1);
+  // const id = '6114d85e09e7b4f566acec8e';
   const getGameStateData = async () => {
     try {
       const data = await getGameState(id);

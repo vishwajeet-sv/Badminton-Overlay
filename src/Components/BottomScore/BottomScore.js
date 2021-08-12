@@ -2,14 +2,12 @@ import React, { useContext } from 'react';
 import BottomScoreImage from '../../Assets/BottomScoreSetPoints.png';
 import BottomScorePointsImage from '../../Assets/BottomScorePoints.png';
 import BottomScoreTeamImage from '../../Assets/BottomScoreName.png';
+import IndicatorImage from '../../Assets/Indicator.png';
 import GameStateDataContext from '../../contexts/GameStateDataContext';
-import StreamDataContext from '../../contexts/StreamDataContext';
 import styles from './styles.module.css';
-import { TeamNameAbrivation } from '../../globalServices/StreamDataServices';
 
 const BottomScore = () => {
   const { gameStateData } = useContext(GameStateDataContext);
-  const { streamData } = useContext(StreamDataContext);
 
   return (
     <>
@@ -28,40 +26,38 @@ const BottomScore = () => {
         src={BottomScorePointsImage}
         alt="bottomScoreImage"
       />
+      {gameStateData.layer_zero_game_state.is_p1_serving && (
+        <img className={styles.p1IndicatorImage} src={IndicatorImage} alt="i" />
+      )}
+      {!gameStateData.layer_zero_game_state.is_p1_serving && (
+        <img className={styles.p2IndicatorImage} src={IndicatorImage} alt="i" />
+      )}
       <div className={styles.homeTeamName}>
         {' '}
         {gameStateData.layer_zero_game_state.p1_name}
       </div>
-      <div className={styles.homeScoreGoals}>
+      <div className={styles.p1SetPoints}>
         {' '}
-        {gameStateData.layer_zero_game_state.home_team_goals}
+        {gameStateData.layer_zero_game_state.p1_sets_won}
       </div>
-      <div className={styles.awayScoreGoals}>
+      <div className={styles.p1CurrentPoints}>
         {' '}
-        {gameStateData.layer_zero_game_state.away_team_goals}
-      </div>
-
-      <div className={styles.homeScoreBehinds}>
-        {' '}
-        {gameStateData.layer_zero_game_state.home_team_behind}
-      </div>
-      <div className={styles.awayScoreBehinds}>
-        {' '}
-        {gameStateData.layer_zero_game_state.away_team_behind}
-      </div>
-
-      <div className={styles.homeScore}>
-        {' '}
-        {gameStateData.layer_zero_game_state.home_team_total}
-      </div>
-      <div className={styles.awayScore}>
-        {' '}
-        {gameStateData.layer_zero_game_state.away_team_total}
+        {gameStateData.layer_zero_game_state.p1_current_set_points}
       </div>
 
       <div className={styles.awayTeamName}>
         {gameStateData.layer_zero_game_state.p2_name}
       </div>
+
+      <div className={styles.p2SetPoints}>
+        {' '}
+        {gameStateData.layer_zero_game_state.p2_current_set_points}
+      </div>
+      <div className={styles.p2CurrentPoints}>
+        {' '}
+        {gameStateData.layer_zero_game_state.p2_current_set_points}
+      </div>
+
       {gameStateData.current_ads.banner_ad_url !== '' &&
         gameStateData.current_ads.banner_ad_size !== 'banner_full_screen' &&
         gameStateData.current_ads.is_banner_ad_visible && (

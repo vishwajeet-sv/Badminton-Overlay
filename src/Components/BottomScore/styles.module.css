@@ -17,76 +17,71 @@
   left: 21.9vw;
   width: 3vw;
 }
+.p1IndicatorImage,
+.p2IndicatorImage {
+  position: absolute;
+  top: 7.4vh;
+  left: 5.2vw;
+  height: 2.6vh;
+  width: 1vw;
+}
+.p2IndicatorImage {
+  top: 11.5vh;
+}
 .homeTeamName,
-.awayTeamName,
-.homeScore,
-.awayScore,
-.homeScoreGoals,
-.awayScoreGoals,
-.homeScoreBehinds,
-.awayScoreBehinds {
-  font-size: 2.9vh;
+.awayTeamName {
+  font-size: 2.8vh;
   color: aliceblue;
   position: absolute;
   left: 7vw;
-  top: 6.6vh;
+  top: 6.5vh;
   width: 12vw;
   text-align: start;
   overflow: hidden;
-  text-transform: capitalize;
+  text-transform: uppercase;
 }
 .awayTeamName {
-  top: 10.8vh;
+  top: 10.65vh;
 }
-.homeScore,
-.awayScore,
-.homeScoreGoals,
-.awayScoreGoals,
-.homeScoreBehinds,
-.awayScoreBehinds {
-  left: 18.1vw;
-  font-size: 3.7vh;
-  color: black;
-  top: 86vh;
-}
-
-.homeScoreGoals,
-.awayScoreGoals,
-.homeScoreBehinds,
-.awayScoreBehinds {
-  left: 10.1vw;
-  font-size: 3.7vh;
+.p1SetPoints,
+.p2SetPoints,
+.p1CurrentPoints,
+.p2CurrentPoints {
+  font-size: 2.85vh;
+  position: absolute;
+  top: 6.5vh;
+  left: 18.5vw;
   color: aliceblue;
-  top: 86vh;
+
+  width: 4vw;
+  text-align: center;
 }
-.homeScoreBehinds,
-.awayScoreBehinds {
-  left: 13.5vw;
+.p1CurrentPoints,
+.p2CurrentPoints {
+  left: 21.4vw;
 }
-.awayScore,
-.awayScoreGoals,
-.awayScoreBehinds {
-  top: 90.8vh;
-}
-.quarter {
-  top: 86.2vh;
-  left: 23.6vw;
+.p2SetPoints,
+.p2CurrentPoints {
+  top: 10.8vh;
 }
 .banner_small {
   position: absolute;
-  top: 87.5vh;
-  left: 46vw;
-  width: 28vw;
+  width: 22%;
+  bottom: 4vh;
+  left: 5vh;
 }
 
 .banner_medium {
   position: absolute;
   width: 50%;
   top: 86.5vh;
-  left: 40vw;
+  left: 0;
+  right: 0;
+  margin-left: auto;
+  margin-right: auto;
 }
 .banner_large {
   position: absolute;
   width: 100%;
-  top: 0;
+  top: 86.8vh;
 }
