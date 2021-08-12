@@ -1,0 +1,21 @@
+.banner_small {
+  position: absolute;
+  width: 20%;
+  bottom: 4vh;
+  left: 5vh;
+}
+
+.banner_medium {
+  position: absolute;
+  width: 60%;
+  bottom: 5vh;
+  left: 0;
+  right: 0;
+  margin-left: auto;
+  margin-right: auto;
+}
+.banner_large {
+  position: absolute;
+  width: 100%;
+  bottom: 0;
+}

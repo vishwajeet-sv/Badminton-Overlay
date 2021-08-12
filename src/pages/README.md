@@ -1,0 +1,11 @@
+- each directory should correspond to a page / route on the site
+- usually has react router based nesting
+- directories may be nested to reflect the navigation structure of pages, or see whatever structure fits best for use case here
+
+- each page / sub-page can have its own `service.js`, `styles.module.css` if needed
+- sample code is added for following routes that contains sample code to process route params like resource id
+  - `/`
+  - `/page-one`
+  - `/page-two`
+  - `/page-two/sub-page-one/[resource-id]`
+  - `/page-two/sub-page-two/[resource-id]`

@@ -1,0 +1,7 @@
+.fullScreen {
+  position: absolute;
+  width: 100%;
+}
+.hide {
+  display: none;
+}

@@ -1,0 +1,108 @@
+.matchSummaryImage {
+  position: absolute;
+  top: 85vh;
+  left: 0;
+  right: 0;
+  margin-left: auto;
+  margin-right: auto;
+  width: 62vw;
+  height: 7vh;
+}
+.homeTeamName,
+.awayTeamName {
+  font-size: 3.4vh;
+  color: aliceblue;
+  position: absolute;
+  left: 26vw;
+  top: 85.85vh;
+  text-transform: capitalize;
+  font-family: poppin-Medium;
+  width: 16vw;
+  height: 4vh;
+  overflow: hidden;
+  display: flex;
+}
+.awayTeamName {
+  justify-content: flex-end;
+  left: 57.8vw;
+  text-align: right;
+}
+.homeTeamScore,
+.awayTeamScore {
+  position: absolute;
+  top: 85.4vh;
+  left: 41.8vw;
+  font-size: 4.4vh;
+  font-family: poppin-Bold;
+  color: aliceblue;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 4vw;
+}
+.awayTeamScore {
+  left: 53.5vw;
+}
+
+.homeTeamLogo,
+.awayTeamLogo {
+  position: absolute;
+  top: 85.65vh;
+  left: 19.18vw;
+  height: 5.8vh;
+}
+.awayTeamLogoBackground,
+.awayTeamLogo {
+  left: 75.2vw;
+}
+.quarter {
+  position: absolute;
+  top: 84.84vh;
+  left: 46.6vw;
+  font-size: 3.4vh;
+  color: rgba(0, 0, 0, 0.808);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-family: poppin-Bold;
+  width: 6vw;
+  height: 7.5vh;
+}
+.finalQuarter {
+  position: absolute;
+  top: 84.84vh;
+  left: 46.6vw;
+  font-size: 2.5vh;
+  color: rgba(0, 0, 0, 0.808);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-family: poppin-Bold;
+  width: 6vw;
+}
+.banner_small {
+  position: absolute;
+  width: 20%;
+  top: 80vh;
+  left: 0;
+  right: 0;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.banner_medium {
+  position: absolute;
+  width: 40%;
+  top: 78vh;
+  left: 0;
+  right: 0;
+  margin-left: auto;
+  margin-right: auto;
+}
+.banner_large {
+  position: absolute;
+  width: 100%;
+  top: 0;
+}

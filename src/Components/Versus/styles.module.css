@@ -1,0 +1,125 @@
+.homeVersusContainer {
+  height: 100vh;
+  width: 100vw;
+}
+.versusTopImage {
+  position: absolute;
+  height: 18vh;
+  width: 100vw;
+  top: 8.5vh;
+  left: 0;
+  right: 0;
+  margin-left: auto;
+  margin-right: auto;
+}
+.eventName {
+  position: absolute;
+  height: 10vh;
+  width: 67vw;
+  font-size: 5vh;
+  color: aliceblue;
+  left: 0;
+  top: 9.15vh;
+  text-align: center;
+  text-transform: uppercase;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.sportvotInfo {
+  position: absolute;
+  height: 10vh;
+  width: 32vw;
+  font-size: 3vh;
+  color: aliceblue;
+  right: 0;
+  top: 9.15vh;
+  text-align: center;
+  text-transform: uppercase;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  font-family: poppin-Bold;
+}
+.eventLocation {
+  position: absolute;
+  height: 5vh;
+  width: 100vw;
+  font-size: 3.5vh;
+  color: aliceblue;
+  left: 0;
+  top: 21vh;
+  text-align: center;
+  text-transform: capitalize;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.versusImage {
+  position: absolute;
+  height: 50vh;
+  width: 100vw;
+  top: 30vh;
+  left: 0;
+  right: 0;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.homeVersusLogo,
+.awayVersusLogo {
+  position: absolute;
+  height: 36vh;
+  top: 34vh;
+  left: 2vw;
+}
+.awayVersusLogo {
+  left: 62vw;
+}
+
+.homeTeamName,
+.awayTeamName {
+  position: absolute;
+  height: 9.5vh;
+  width: 36vw;
+  top: 70.5vh;
+  left: 3vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  font-size: 3.8vh;
+  font-weight: 600;
+  color: aliceblue;
+  text-transform: uppercase;
+}
+.awayTeamName {
+  left: 62.5vw;
+}
+
+.banner_small {
+  position: absolute;
+  top: 80vh;
+
+  width: 22%;
+  left: 0;
+  right: 0;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.banner_medium {
+  position: absolute;
+  width: 50%;
+  top: 80vh;
+  left: 0;
+  right: 0;
+  margin-left: auto;
+  margin-right: auto;
+}
+.banner_large {
+  position: absolute;
+  width: 100%;
+  bottom: 0;
+}

@@ -1,0 +1,88 @@
+.bottomScoreImage {
+  position: absolute;
+  top: 86vh;
+  left: 11vw;
+  width: 20vw;
+  height: 10vh;
+}
+.bottomScoreTeamImage {
+  position: absolute;
+  top: 86vh;
+  left: 4.5vw;
+  width: 7vw;
+  height: 10vh;
+}
+.homeTeamName,
+.awayTeamName,
+.homeScore,
+.awayScore,
+.homeScoreGoals,
+.awayScoreGoals,
+.homeScoreBehinds,
+.awayScoreBehinds,
+.quarter {
+  font-size: 3vh;
+  color: aliceblue;
+  position: absolute;
+  left: 4vw;
+  top: 86.6vh;
+
+  font-family: poppin-Bold;
+  width: 8vw;
+  text-align: center;
+}
+.awayTeamName {
+  top: 91.4vh;
+}
+.homeScore,
+.awayScore,
+.homeScoreGoals,
+.awayScoreGoals,
+.homeScoreBehinds,
+.awayScoreBehinds {
+  left: 18.1vw;
+  font-size: 3.7vh;
+  color: black;
+  top: 86vh;
+}
+
+.homeScoreGoals,
+.awayScoreGoals,
+.homeScoreBehinds,
+.awayScoreBehinds {
+  left: 10.1vw;
+  font-size: 3.7vh;
+  color: aliceblue;
+  top: 86vh;
+}
+.homeScoreBehinds,
+.awayScoreBehinds {
+  left: 13.5vw;
+}
+.awayScore,
+.awayScoreGoals,
+.awayScoreBehinds {
+  top: 90.8vh;
+}
+.quarter {
+  top: 86.2vh;
+  left: 23.6vw;
+}
+.banner_small {
+  position: absolute;
+  top: 87.5vh;
+  left: 46vw;
+  width: 28vw;
+}
+
+.banner_medium {
+  position: absolute;
+  width: 50%;
+  top: 86.5vh;
+  left: 40vw;
+}
+.banner_large {
+  position: absolute;
+  width: 100%;
+  top: 0;
+}
