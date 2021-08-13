@@ -112,6 +112,7 @@ function App() {
 
   return (
     gameStateData &&
+    gameStateData.current_ads &&
     streamData &&
     gameStateData.mode === 'LAYER_0' && (
       <GameStateDataContext.Provider value={GameStateDataContextValue}>
