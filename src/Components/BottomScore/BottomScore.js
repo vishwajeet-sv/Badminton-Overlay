@@ -51,7 +51,7 @@ const BottomScore = () => {
 
       <div className={styles.p2SetPoints}>
         {' '}
-        {gameStateData.layer_zero_game_state.p2_current_set_points}
+        {gameStateData.layer_zero_game_state.p2_sets_won}
       </div>
       <div className={styles.p2CurrentPoints}>
         {' '}

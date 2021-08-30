@@ -1,5 +1,6 @@
 import React, { useEffect, useState, useRef, useMemo } from 'react';
 import io from 'socket.io-client';
+import * as qs from 'query-string';
 import getGameState from './api/getGameState';
 import getStream from './api/getStreamInfo';
 import GameStateDataContext from './contexts/GameStateDataContext';
@@ -22,7 +23,11 @@ function App() {
 
   const location = window.location.pathname;
   const id = location.substring(1);
-  // const id = '6114d85e09e7b4f566acec8e';
+  //const id = '612cefa39ba3d78c43a3f2e4';
+  const windowUrl = window.location.search;
+  const parsed = qs.parse(windowUrl);
+  const { millisecondsDelay = 0 } = parsed;
+
   const getGameStateData = async () => {
     try {
       const data = await getGameState(id);
@@ -91,7 +96,13 @@ function App() {
         // eslint-disable-next-line camelcase
         const { game_state } = data;
 
-        setGameStateData(game_state);
+        if (millisecondsDelay > 0) {
+          setTimeout(() => {
+            setGameStateData(game_state);
+          }, millisecondsDelay);
+        } else {
+          setGameStateData(game_state);
+        }
       });
       socketRef.current.socket.on('stream-update', updatedData => {
         const { data } = updatedData;
