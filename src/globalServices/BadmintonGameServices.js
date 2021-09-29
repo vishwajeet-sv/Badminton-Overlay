@@ -1,8 +1,3 @@
-const getTeamId = (playerId, streamData) => {
-  if (streamData.teams_info.home_team.team_players[playerId])
-    return streamData.teams_info.home_team.team_id;
-  return streamData.teams_info.away_team.team_id;
-};
 const getNameAbr = teamName => {
   const words = teamName.split(' ');
 
@@ -27,6 +22,53 @@ const TeamNameAbrivation = (id, streamData) => {
   }
   const teamName = streamData.teams_info.away_team.name;
   return getNameAbr(teamName);
+};
+
+const getFirstPlayerName = (playerId, teamsInfoData) => {
+  if (!playerId) return '';
+  if (teamsInfoData.teams_info.home_team.team_players[playerId]) {
+    return `${teamsInfoData.teams_info.home_team.team_players[playerId].first_name}`;
+  }
+  if (!teamsInfoData.teams_info.away_team.team_players[playerId]) return '';
+  return `${teamsInfoData.teams_info.away_team.team_players[playerId].first_name}`;
+};
+
+const getLastPlayerName = (playerId, teamsInfoData) => {
+  if (!playerId) return '';
+  if (teamsInfoData.teams_info.home_team.team_players[playerId]) {
+    return `${teamsInfoData.teams_info.home_team.team_players[playerId].last_name}`;
+  }
+  if (!teamsInfoData.teams_info.away_team.team_players[playerId]) return '';
+  return `${teamsInfoData.teams_info.away_team.team_players[playerId].last_name}`;
+};
+
+const getFullPlayerName = (playerId, teamsInfoData) => {
+  if (!playerId) return '';
+  if (
+    !teamsInfoData.teams_info.home_team.team_players[playerId] &&
+    !teamsInfoData.teams_info.away_team.team_players[playerId]
+  )
+    return '';
+
+  const playerName = teamsInfoData.teams_info.home_team.team_players[playerId]
+    ? teamsInfoData.teams_info.home_team.team_players[playerId]
+    : teamsInfoData.teams_info.away_team.team_players[playerId];
+
+  return `${playerName.first_name} ${playerName.last_name}`;
+};
+
+const getPlayersProfilePic = (playerId, teamsInfoData) => {
+  if (!playerId) return '';
+  if (
+    !teamsInfoData.teams_info.home_team.team_players[playerId] &&
+    !teamsInfoData.teams_info.away_team.team_players[playerId]
+  )
+    return '';
+  const playerInfo = teamsInfoData.teams_info.home_team.team_players[playerId]
+    ? teamsInfoData.teams_info.home_team.team_players[playerId]
+    : teamsInfoData.teams_info.away_team.team_players[playerId];
+
+  return playerInfo.profile_image;
 };
 
 const getIsBlankVisible = gameState => {
@@ -97,10 +139,13 @@ const getBannerUrl = gameStateData => {
   return gameStateData.current_ads.banner_ad_url;
 };
 
-export default getTeamId;
+export default getIsBlankVisible;
 export {
-  getTeamId,
   TeamNameAbrivation,
+  getFirstPlayerName,
+  getLastPlayerName,
+  getFullPlayerName,
+  getPlayersProfilePic,
   getIsBlankVisible,
   getIsBottomScoreVisible,
   getHomeSideName,

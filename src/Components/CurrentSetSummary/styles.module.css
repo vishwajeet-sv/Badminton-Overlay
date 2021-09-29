@@ -1,0 +1,62 @@
+.currentSummaryImage {
+  position: absolute;
+  top: 82vh;
+  left: 0;
+  right: 0;
+  margin-left: auto;
+  margin-right: auto;
+  width: 65vw;
+  height: 12.8vh;
+}
+
+.homeTeamName,
+.awayTeamName {
+  font-size: 3.2vh;
+  color: aliceblue;
+  position: absolute;
+  left: 18vw;
+  top: 88.5vh;
+  width: 28vw;
+  text-align: center;
+  overflow: hidden;
+  text-transform: uppercase;
+}
+.awayTeamName {
+  left: 53.85vw;
+}
+
+.currentPoints {
+  font-size: 3.2vh;
+  position: absolute;
+  top: 82vh;
+  left: 0;
+  right: 0;
+  margin-left: auto;
+  margin-right: auto;
+  color: whitesmoke;
+  width: 15vw;
+  text-align: center;
+  font-family: poppin-Bold;
+}
+
+.banner_small {
+  position: absolute;
+  width: 22%;
+  bottom: 4vh;
+  left: 5vh;
+}
+
+.banner_medium {
+  position: absolute;
+  width: 50%;
+  top: 86.5vh;
+  left: 0;
+  right: 0;
+  margin-left: auto;
+  margin-right: auto;
+}
+.banner_large {
+  position: absolute;
+  width: 100%;
+  top: 86.8vh;
+}
