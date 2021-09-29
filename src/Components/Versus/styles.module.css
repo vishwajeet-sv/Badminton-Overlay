@@ -1,0 +1,51 @@
+.versusBasicImage {
+  position: absolute;
+  top: 86.5vh;
+  left: 0;
+  right: 0;
+  margin-left: auto;
+  margin-right: auto;
+  width: 65vw;
+  height: 9vh;
+}
+
+.homeTeamName,
+.awayTeamName {
+  font-size: 3.2vh;
+  color: aliceblue;
+  position: absolute;
+  left: 18vw;
+  top: 88.5vh;
+  width: 28vw;
+  text-align: center;
+  overflow: hidden;
+  text-transform: uppercase;
+}
+.awayTeamName {
+  left: 53.85vw;
+}
+
+.banner_small {
+  position: absolute;
+  width: 25%;
+  top: 80vh;
+  left: 0;
+  right: 0;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.banner_medium {
+  position: absolute;
+  width: 45%;
+  top: 80vh;
+  left: 0;
+  right: 0;
+  margin-left: auto;
+  margin-right: auto;
+}
+.banner_large {
+  position: absolute;
+  width: 100%;
+  top: 0vh;
+}
