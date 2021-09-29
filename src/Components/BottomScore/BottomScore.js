@@ -5,6 +5,17 @@ import BottomScoreTeamImage from '../../Assets/BottomScoreName.png';
 import IndicatorImage from '../../Assets/Indicator.png';
 import GameStateDataContext from '../../contexts/GameStateDataContext';
 import styles from './styles.module.css';
+import {
+  getAwaySideCurrentSetPoints,
+  getAwaySideName,
+  getAwaySideSetWonPoints,
+  getBannerSize,
+  getBannerUrl,
+  getHomeSideCurrentSetPoints,
+  getHomeSideName,
+  getHomeSideSetWonPoints,
+  isSizeBannerVisible,
+} from '../../globalServices/BadmintonGameServices';
 
 const BottomScore = () => {
   const { gameStateData } = useContext(GameStateDataContext);
@@ -34,39 +45,37 @@ const BottomScore = () => {
       )}
       <div className={styles.homeTeamName}>
         {' '}
-        {gameStateData.layer_zero_game_state.p1_name}
+        {getHomeSideName(gameStateData)}
       </div>
       <div className={styles.p1SetPoints}>
         {' '}
-        {gameStateData.layer_zero_game_state.p1_sets_won}
+        {getHomeSideSetWonPoints(gameStateData)}
       </div>
       <div className={styles.p1CurrentPoints}>
         {' '}
-        {gameStateData.layer_zero_game_state.p1_current_set_points}
+        {getHomeSideCurrentSetPoints(gameStateData)}
       </div>
 
       <div className={styles.awayTeamName}>
-        {gameStateData.layer_zero_game_state.p2_name}
+        {getAwaySideName(gameStateData)}
       </div>
 
       <div className={styles.p2SetPoints}>
         {' '}
-        {gameStateData.layer_zero_game_state.p2_sets_won}
+        {getAwaySideSetWonPoints(gameStateData)}
       </div>
       <div className={styles.p2CurrentPoints}>
         {' '}
-        {gameStateData.layer_zero_game_state.p2_current_set_points}
+        {getAwaySideCurrentSetPoints(gameStateData)}
       </div>
 
-      {gameStateData.current_ads.banner_ad_url !== '' &&
-        gameStateData.current_ads.banner_ad_size !== 'banner_full_screen' &&
-        gameStateData.current_ads.is_banner_ad_visible && (
-          <img
-            className={styles[gameStateData.current_ads.banner_ad_size]}
-            src={gameStateData.current_ads.banner_ad_url}
-            alt="blankbanner"
-          />
-        )}
+      {isSizeBannerVisible(gameStateData) && (
+        <img
+          className={styles[getBannerSize(gameStateData)]}
+          src={getBannerUrl(gameStateData)}
+          alt="banner"
+        />
+      )}
     </>
   );
 };

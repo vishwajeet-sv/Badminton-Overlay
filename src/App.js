@@ -13,6 +13,10 @@ import EventDataContext from './contexts/EventDataContext';
 import getEventInfo from './api/getEventInfo';
 import './App.css';
 import { SOCKET_BASE_URL } from './constants';
+import {
+  getIsBlankVisible,
+  getIsBottomScoreVisible,
+} from './globalServices/BadmintonGameServices';
 
 function App() {
   const [gameStateData, setGameStateData] = useState(null);
@@ -54,16 +58,6 @@ function App() {
   useEffect(() => {
     getGameStateData();
     getStreamData();
-  }, []);
-
-  useEffect(() => {
-    ref.current.intervalId = setInterval(() => {
-      getGameStateData();
-      getStreamData();
-    }, 5000);
-    return () => {
-      clearInterval(ref.current.intervalId);
-    };
   }, []);
 
   const GameStateDataContextValue = useMemo(
@@ -133,8 +127,7 @@ function App() {
             <div style={{ fontFamily: 'poppin-Medium' }}>
               <div
                 className={
-                  gameStateData.layer_zero_game_state.visual_flags
-                    .is_score_visible
+                  getIsBottomScoreVisible(gameStateData)
                     ? 'animate__animated animate__fadeIn animate__faster'
                     : 'hide'
                 }
@@ -142,7 +135,7 @@ function App() {
                 <BottomScore />
               </div>
 
-              {gameStateData.layer_zero_game_state.visual_flags.is_blank && (
+              {getIsBlankVisible(gameStateData) && (
                 <BlankScreen gameStateData={gameStateData} />
               )}
               {gameStateData.current_ads.banner_ad_size ===

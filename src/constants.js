@@ -1,4 +1,4 @@
-const IS_TEST = false;
+const IS_TEST = true;
 
 const BASE_URL_TEST = 'https://interapis.test.sportvot.com';
 const BASE_URL_PROD = 'https://interapis.sportvot.com';
