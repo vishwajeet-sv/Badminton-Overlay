@@ -41,15 +41,18 @@
 
 .banner_small {
   position: absolute;
-  width: 22%;
-  bottom: 4vh;
-  left: 5vh;
+  width: 25%;
+  top: 76vh;
+  left: 0;
+  right: 0;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .banner_medium {
   position: absolute;
-  width: 50%;
-  top: 86.5vh;
+  width: 45%;
+  top: 74vh;
   left: 0;
   right: 0;
   margin-left: auto;
@@ -58,5 +61,5 @@
 .banner_large {
   position: absolute;
   width: 100%;
-  top: 86.8vh;
+  top: 0vh;
 }
