@@ -1,0 +1,103 @@
+.matchSummaryImage {
+  position: absolute;
+  top: 22vh;
+  left: 0;
+  right: 0;
+  margin-left: auto;
+  margin-right: auto;
+  width: 65vw;
+  height: 50vh;
+}
+
+.homeTeamName,
+.awayTeamName {
+  font-size: 3.4vh;
+  color: aliceblue;
+  position: absolute;
+  left: 18vw;
+  top: 26vh;
+  width: 22.5vw;
+  text-align: center;
+  overflow: hidden;
+  text-transform: uppercase;
+}
+.awayTeamName {
+  left: 58.85vw;
+}
+
+.homePoints,
+.awayPoints {
+  font-size: 6vh;
+  position: absolute;
+  top: 24.5vh;
+  left: 40.25vw;
+  color: whitesmoke;
+  width: 5vw;
+  text-align: center;
+  font-family: poppin-Bold;
+}
+.awayPoints {
+  left: 54vw;
+}
+
+.row1Points,
+.row2Points,
+.row3Points,
+.row4Points {
+  display: flex;
+  height: 5vh;
+  position: absolute;
+  top: 39.5vh;
+  left: 0;
+  right: 0;
+  margin-left: auto;
+  margin-right: auto;
+  width: 57vw;
+  font-size: 3.4vh;
+  color: aliceblue;
+  align-items: center;
+  text-transform: uppercase;
+}
+.row2Points {
+  top: 46.5vh;
+}
+.row3Points {
+  top: 54vh;
+}
+.row4Points {
+  top: 61.5vh;
+}
+.rowPoints {
+  width: 9vw;
+  text-align: center;
+}
+.rowHeading {
+  width: 64.5vw;
+
+  text-align: center;
+}
+
+.banner_small {
+  position: absolute;
+  width: 22%;
+  top: 71.4vh;
+  left: 0;
+  right: 0;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.banner_medium {
+  position: absolute;
+  width: 40%;
+  top: 71.4vh;
+  left: 0;
+  right: 0;
+  margin-left: auto;
+  margin-right: auto;
+}
+.banner_large {
+  position: absolute;
+  width: 100%;
+  top: 86.8vh;
+}

@@ -18,6 +18,7 @@ import {
   getIsBottomScoreVisible,
 } from './globalServices/BadmintonGameServices';
 import CurrentSetSummary from './Components/CurrentSetSummary/CurrentSetSummary';
+import MatchSummary from './Components/MatchSummary/MatchSummary';
 
 function App() {
   const [gameStateData, setGameStateData] = useState(null);
@@ -138,12 +139,22 @@ function App() {
 
               <div
                 className={
-                  true
+                  false
                     ? 'animate__animated animate__fadeIn animate__faster'
                     : 'hide'
                 }
               >
                 <CurrentSetSummary />
+              </div>
+
+              <div
+                className={
+                  true
+                    ? 'animate__animated animate__fadeIn animate__faster'
+                    : 'hide'
+                }
+              >
+                <MatchSummary />
               </div>
 
               {getIsBlankVisible(gameStateData) && (
