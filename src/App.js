@@ -121,8 +121,7 @@ function App() {
   return (
     gameStateData &&
     gameStateData.current_ads &&
-    streamData &&
-    gameStateData.mode === 'LAYER_0' && (
+    streamData && (
       <GameStateDataContext.Provider value={GameStateDataContextValue}>
         <StreamDataContext.Provider value={TeamInfoDataContextValue}>
           <EventDataContext.Provider value={EventInfoDataContextValue}>
@@ -140,7 +139,7 @@ function App() {
 
               <div
                 className={
-                  getIsBottomScoreVisible(gameStateData)
+                  getIsBottomScoreVisible(gameStateData) || true
                     ? 'animate__animated animate__fadeIn animate__faster'
                     : 'hide'
                 }

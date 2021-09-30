@@ -25,7 +25,7 @@ const TeamNameAbrivation = (id, streamData) => {
 };
 
 const getFirstPlayerName = (playerId, teamsInfoData) => {
-  if (!playerId) return '';
+  if (playerId) return 'rrhgwrg wegwewe weg';
   if (teamsInfoData.teams_info.home_team.team_players[playerId]) {
     return `${teamsInfoData.teams_info.home_team.team_players[playerId].first_name}`;
   }
@@ -71,6 +71,12 @@ const getPlayersProfilePic = (playerId, teamsInfoData) => {
   return playerInfo.profile_image;
 };
 
+const isHomeSideServing = gameState => {
+  if (gameState.mode === 'LAYER_0')
+    return gameState.layer_zero_game_state.p1_name;
+  return gameState.set_data.is_home_side_serving;
+};
+
 const getIsBlankVisible = gameState => {
   const visualFlags =
     gameState.mode === 'LAYER_0'
@@ -86,43 +92,83 @@ const getIsBottomScoreVisible = gameState => {
   return visualFlags.is_score_visible;
 };
 
-const getHomeSideName = gameState => {
+const getHomeSideName = (gameState, streamData) => {
   if (gameState.mode === 'LAYER_0')
     return gameState.layer_zero_game_state.p1_name;
-  return 'df';
+  if (!gameState.configure.is_doubles) {
+    return getFirstPlayerName(
+      gameState.configure.home_side.player_one_id,
+      streamData,
+    );
+  }
+  if (gameState.configure.is_doubles) {
+    return `${getFirstPlayerName(
+      gameState.configure.home_side.player_one_id,
+      streamData,
+    )}/${getFirstPlayerName(
+      gameState.configure.home_side.player_two_id,
+      streamData,
+    )}`;
+  }
+  return '';
 };
-const getAwaySideName = gameState => {
+const getAwaySideName = (gameState, streamData) => {
   if (gameState.mode === 'LAYER_0')
     return gameState.layer_zero_game_state.p2_name;
-  return 'df';
+  if (!gameState.configure.is_doubles) {
+    return getFirstPlayerName(
+      gameState.configure.away_side.player_one_id,
+      streamData,
+    );
+  }
+  if (gameState.configure.is_doubles) {
+    return `${getFirstPlayerName(
+      gameState.configure.away_side.player_one_id,
+      streamData,
+    )}/${getFirstPlayerName(
+      gameState.configure.away_side.player_two_id,
+      streamData,
+    )}`;
+  }
+  return '';
 };
 
 const getHomeSideSetWonPoints = gameState => {
   if (gameState.mode === 'LAYER_0')
     return gameState.layer_zero_game_state.p1_sets_won;
   if (!gameState.set_data) return 0;
-  return 'df';
+  return gameState.set_data.home_side_sets_won;
 };
 
 const getAwaySideSetWonPoints = gameState => {
   if (gameState.mode === 'LAYER_0')
     return gameState.layer_zero_game_state.p2_sets_won;
   if (!gameState.set_data) return 0;
-  return 'df';
+  return gameState.set_data.away_side_sets_won;
 };
 
 const getHomeSideCurrentSetPoints = gameState => {
   if (gameState.mode === 'LAYER_0')
     return gameState.layer_zero_game_state.p1_current_set_points;
-  if (!gameState.set_data) return 0;
-  return 'df';
+  if (
+    !gameState.set_data ||
+    !gameState.set_data.sets[gameState.set_data.current_set_number]
+  )
+    return 0;
+  return gameState.set_data.sets[gameState.set_data.current_set_number]
+    .home_side_points;
 };
 
 const getAwaySideCurrentSetPoints = gameState => {
   if (gameState.mode === 'LAYER_0')
     return gameState.layer_zero_game_state.p2_current_set_points;
-  if (!gameState.set_data) return 0;
-  return 'df';
+  if (
+    !gameState.set_data ||
+    !gameState.set_data.sets[gameState.set_data.current_set_number]
+  )
+    return 0;
+  return gameState.set_data.sets[gameState.set_data.current_set_number]
+    .away_side_points;
 };
 
 const isSizeBannerVisible = gameStateData => {
@@ -157,4 +203,5 @@ export {
   isSizeBannerVisible,
   getBannerSize,
   getBannerUrl,
+  isHomeSideServing,
 };

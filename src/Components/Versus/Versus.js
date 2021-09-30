@@ -1,6 +1,7 @@
 import React, { useContext } from 'react';
 import VersusBasicImage from '../../Assets/VersusBasic.png';
 import GameStateDataContext from '../../contexts/GameStateDataContext';
+import StreamDataContext from '../../contexts/StreamDataContext';
 import styles from './styles.module.css';
 import {
   getAwaySideName,
@@ -12,7 +13,7 @@ import {
 
 const Versus = () => {
   const { gameStateData } = useContext(GameStateDataContext);
-
+  const { streamData } = useContext(StreamDataContext);
   return (
     <>
       <div>
@@ -26,10 +27,10 @@ const Versus = () => {
             />
             <div className={styles.homeTeamName}>
               {' '}
-              {getHomeSideName(gameStateData)}
+              {getHomeSideName(gameStateData, streamData)}
             </div>
             <div className={styles.awayTeamName}>
-              {getAwaySideName(gameStateData)}
+              {getAwaySideName(gameStateData, streamData)}
             </div>
             {isSizeBannerVisible(gameStateData) && (
               <img

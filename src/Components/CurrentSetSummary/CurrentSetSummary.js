@@ -1,6 +1,7 @@
 import React, { useContext } from 'react';
 import CurrentSetSummaryImage from '../../Assets/CurrentSetSummary.png';
 import GameStateDataContext from '../../contexts/GameStateDataContext';
+import StreamDataContext from '../../contexts/StreamDataContext';
 import styles from './styles.module.css';
 import {
   getAwaySideCurrentSetPoints,
@@ -14,7 +15,7 @@ import {
 
 const CurrentSetSummary = () => {
   const { gameStateData } = useContext(GameStateDataContext);
-
+  const { streamData } = useContext(StreamDataContext);
   return (
     <>
       <img
@@ -25,10 +26,10 @@ const CurrentSetSummary = () => {
 
       <div className={styles.homeTeamName}>
         {' '}
-        {getHomeSideName(gameStateData)}
+        {getHomeSideName(gameStateData, streamData)}
       </div>
       <div className={styles.awayTeamName}>
-        {getAwaySideName(gameStateData)}
+        {getAwaySideName(gameStateData, streamData)}
       </div>
       <div className={styles.currentPoints}>
         {' '}

@@ -4,6 +4,7 @@ import BottomScorePointsImage from '../../Assets/BottomScorePoints.png';
 import BottomScoreTeamImage from '../../Assets/BottomScoreName.png';
 import IndicatorImage from '../../Assets/Indicator.png';
 import GameStateDataContext from '../../contexts/GameStateDataContext';
+import StreamDataContext from '../../contexts/StreamDataContext';
 import styles from './styles.module.css';
 import {
   getAwaySideCurrentSetPoints,
@@ -14,12 +15,14 @@ import {
   getHomeSideCurrentSetPoints,
   getHomeSideName,
   getHomeSideSetWonPoints,
+  isHomeSideServing,
   isSizeBannerVisible,
 } from '../../globalServices/BadmintonGameServices';
 
 const BottomScore = () => {
   const { gameStateData } = useContext(GameStateDataContext);
-
+  const { streamData } = useContext(StreamDataContext);
+  console.log('dvjbdsvidj', streamData);
   return (
     <>
       <img
@@ -37,15 +40,16 @@ const BottomScore = () => {
         src={BottomScorePointsImage}
         alt="bottomScoreImage"
       />
-      {gameStateData.layer_zero_game_state.is_p1_serving && (
+      {isHomeSideServing(gameStateData) && (
         <img className={styles.p1IndicatorImage} src={IndicatorImage} alt="i" />
       )}
-      {!gameStateData.layer_zero_game_state.is_p1_serving && (
+      {!isHomeSideServing(gameStateData) && (
         <img className={styles.p2IndicatorImage} src={IndicatorImage} alt="i" />
       )}
+
       <div className={styles.homeTeamName}>
         {' '}
-        {getHomeSideName(gameStateData)}
+        {getHomeSideName(gameStateData, streamData)}
       </div>
       <div className={styles.p1SetPoints}>
         {' '}
@@ -57,7 +61,7 @@ const BottomScore = () => {
       </div>
 
       <div className={styles.awayTeamName}>
-        {getAwaySideName(gameStateData)}
+        {getAwaySideName(gameStateData, streamData)}
       </div>
 
       <div className={styles.p2SetPoints}>

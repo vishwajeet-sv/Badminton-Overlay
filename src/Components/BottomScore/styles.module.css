@@ -30,18 +30,20 @@
 }
 .homeTeamName,
 .awayTeamName {
-  font-size: 2.8vh;
+  font-size: 2.5vh;
   color: aliceblue;
   position: absolute;
   left: 7vw;
-  top: 6.5vh;
+  top: 7vh;
+  white-space: nowrap;
   width: 12vw;
   text-align: start;
+  text-overflow: clip;
   overflow: hidden;
   text-transform: uppercase;
 }
 .awayTeamName {
-  top: 10.65vh;
+  top: 11vh;
 }
 .p1SetPoints,
 .p2SetPoints,
