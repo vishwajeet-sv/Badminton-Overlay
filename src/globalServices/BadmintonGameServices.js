@@ -185,6 +185,46 @@ const getBannerUrl = gameStateData => {
   return gameStateData.current_ads.banner_ad_url;
 };
 
+const isPlayerProfilePicVisible = (gameState, streamData) => {
+  if (gameState.mode === 'LAYER_0') return false;
+  if (!gameState.configure.is_doubles) {
+    if (
+      !getPlayersProfilePic(
+        gameState.configure.home_side.player_one_id,
+        streamData,
+      ) ||
+      !getPlayersProfilePic(
+        gameState.configure.away_side.player_one_id,
+        streamData,
+      )
+    )
+      return false;
+    return true;
+  }
+  if (gameState.configure.is_doubles) {
+    if (
+      (!getPlayersProfilePic(
+        gameState.configure.home_side.player_one_id,
+        streamData,
+      ) ||
+        !getPlayersProfilePic(
+          gameState.configure.away_side.player_one_id,
+          streamData,
+        )) &&
+      (!getPlayersProfilePic(
+        gameState.configure.home_side.player_two_id,
+        streamData,
+      ) ||
+        !getPlayersProfilePic(
+          gameState.configure.away_side.player_two_id,
+          streamData,
+        ))
+    )
+      return false;
+    return true;
+  }
+};
+
 export default getIsBlankVisible;
 export {
   TeamNameAbrivation,
@@ -204,4 +244,5 @@ export {
   getBannerSize,
   getBannerUrl,
   isHomeSideServing,
+  isPlayerProfilePicVisible,
 };

@@ -25,6 +25,48 @@
   left: 53.85vw;
 }
 
+.versusDetailedImage {
+  position: absolute;
+  width: 100vw;
+  height: 52vh;
+  top: 25vh;
+}
+
+.homeTeamNameDetailed,
+.awayTeamNameDetailed {
+  font-size: 3.2vh;
+  color: aliceblue;
+  position: absolute;
+
+  top: 71.5vh;
+  width: 40.5vw;
+  text-align: center;
+  overflow: hidden;
+  text-transform: uppercase;
+}
+.awayTeamNameDetailed {
+  right: 0;
+  width: 39.8vw;
+}
+
+.homeTeamImageContainer,
+.awayTeamImageContainer {
+  position: absolute;
+  height: 45vh;
+  width: 42vw;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  top: 25vh;
+}
+.awayTeamImageContainer {
+  right: 0;
+}
+
+.playerImage {
+  height: 34vh;
+}
 .banner_small {
   position: absolute;
   width: 25%;
@@ -48,4 +90,28 @@
   position: absolute;
   width: 100%;
   top: 0vh;
+}
+.detailed_banner_small {
+  position: absolute;
+  width: 25%;
+  top: 80vh;
+  left: 0;
+  right: 0;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.detailed_banner_medium {
+  position: absolute;
+  width: 45%;
+  top: 80vh;
+  left: 0;
+  right: 0;
+  margin-left: auto;
+  margin-right: auto;
+}
+.detailed_banner_large {
+  position: absolute;
+  width: 100%;
+  bottom: 0vh;
 }
