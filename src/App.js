@@ -129,7 +129,7 @@ function App() {
             <div style={{ fontFamily: 'poppin-Medium' }}>
               <div
                 className={
-                  true
+                  false
                     ? 'animate__animated animate__fadeIn animate__faster'
                     : 'hide'
                 }
@@ -149,7 +149,7 @@ function App() {
 
               <div
                 className={
-                  false
+                  true
                     ? 'animate__animated animate__fadeIn animate__faster'
                     : 'hide'
                 }

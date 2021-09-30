@@ -223,6 +223,7 @@ const isPlayerProfilePicVisible = (gameState, streamData) => {
       return false;
     return true;
   }
+  return false;
 };
 
 export default getIsBlankVisible;

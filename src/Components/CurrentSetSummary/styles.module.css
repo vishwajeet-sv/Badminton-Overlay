@@ -38,7 +38,27 @@
   text-align: center;
   font-family: poppin-Bold;
 }
-
+.homeSidePlayerOneImage,
+.awaySidePlayerOneImage {
+  position: absolute;
+  left: 7.25vw;
+  top: 76.8vh;
+}
+.awaySidePlayerOneImage {
+  left: 82.6vw;
+}
+.homeSidePlayerTwoImage,
+.awaySidePlayerTwoImage {
+  position: absolute;
+  left: 17.4vw;
+  top: 68.5vh;
+}
+.awaySidePlayerTwoImage {
+  left: 72.5vw;
+}
+.playerImage {
+  height: 18vh;
+}
 .banner_small {
   position: absolute;
   width: 25%;
