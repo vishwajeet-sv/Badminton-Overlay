@@ -25,7 +25,7 @@ const TeamNameAbrivation = (id, streamData) => {
 };
 
 const getFirstPlayerName = (playerId, teamsInfoData) => {
-  if (playerId) return 'rrhgwrg wegwewe weg';
+  if (!playerId) return '';
   if (teamsInfoData.teams_info.home_team.team_players[playerId]) {
     return `${teamsInfoData.teams_info.home_team.team_players[playerId].first_name}`;
   }

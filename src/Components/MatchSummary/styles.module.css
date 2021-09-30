@@ -15,11 +15,15 @@
   color: aliceblue;
   position: absolute;
   left: 18vw;
-  top: 26vh;
+  top: 24vh;
+  height: 9vh;
   width: 22.5vw;
   text-align: center;
   overflow: hidden;
   text-transform: uppercase;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 .awayTeamName {
   left: 58.85vw;
