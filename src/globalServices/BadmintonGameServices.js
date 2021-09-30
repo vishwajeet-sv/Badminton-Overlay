@@ -100,6 +100,18 @@ const getIsVersusVisible = gameState => {
   return visualFlags.is_versus_visible;
 };
 
+const getCurrentSetSummaryVisible = gameState => {
+  return gameState.mode === 'LAYER_0'
+    ? gameState.layer_zero_game_state.visual_flags.is_match_summary_visible
+    : gameState.visual_flags.is_current_set_summary_visible;
+};
+
+const getPlayerSpecificInfoVisible = gameState => {
+  return gameState.mode === 'LAYER_0'
+    ? false
+    : gameState.visual_flags.is_specific_player_contribution_visible;
+};
+
 const getIsMatchSummaryVisible = gameState => {
   return gameState.mode === 'LAYER_0'
     ? false
@@ -262,4 +274,6 @@ export {
   isPlayerProfilePicVisible,
   getIsVersusVisible,
   getIsMatchSummaryVisible,
+  getCurrentSetSummaryVisible,
+  getPlayerSpecificInfoVisible,
 };

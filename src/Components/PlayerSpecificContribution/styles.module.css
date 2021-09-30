@@ -1,0 +1,99 @@
+.playerStatsImage {
+  position: absolute;
+  top: 12vh;
+  left: 0;
+  right: 0;
+  margin-left: auto;
+  margin-right: auto;
+  width: 100vw;
+  height: 65vh;
+}
+.playerStatsHeading {
+  position: absolute;
+  top: 20.5vh;
+  left: 0;
+  right: 0;
+  margin-left: auto;
+  margin-right: auto;
+  font-size: 3.5vh;
+  color: aliceblue;
+  width: fit-content;
+}
+.playerName {
+  position: absolute;
+  font-size: 3.2vh;
+  top: 28vh;
+  width: 33vw;
+  left: 18vw;
+
+  color: aliceblue;
+  text-transform: uppercase;
+}
+
+.row1,
+.row2,
+.row3,
+.row4 {
+  position: absolute;
+  display: flex;
+  position: absolute;
+  top: 36vh;
+  left: 20vw;
+  font-size: 3.4vh;
+  text-transform: uppercase;
+  align-items: baseline;
+  color: aliceblue;
+}
+.row2 {
+  top: 43.5vh;
+}
+.row3 {
+  top: 52vh;
+}
+.row4 {
+  top: 60.5vh;
+}
+.rowInfo {
+  width: 22vw;
+}
+.rowPoints {
+  font-size: 5vh;
+  width: 4vw;
+  align-items: center;
+  justify-content: center;
+  display: flex;
+
+  font-family: poppin-Bold;
+}
+.playerProfileImage {
+  position: absolute;
+  top: 28.5vh;
+  left: 55.8vw;
+}
+.playerImage {
+  height: 40vh;
+}
+.banner_small {
+  position: absolute;
+  width: 25%;
+  top: 70.5vh;
+  left: 0;
+  right: 0;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.banner_medium {
+  position: absolute;
+  width: 45%;
+  top: 70.5vh;
+  left: 0;
+  right: 0;
+  margin-left: auto;
+  margin-right: auto;
+}
+.banner_large {
+  position: absolute;
+  width: 100%;
+  bottom: 0vh;
+}

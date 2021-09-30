@@ -50,7 +50,11 @@ const BottomScore = () => {
       <div
         className={styles.homeTeamName}
         style={{
-          fontSize: gameStateData.configure.is_doubles ? '2.2vh' : '2.5vh',
+          fontSize:
+            gameStateData.mode === 'LAYER_0' ||
+            !gameStateData.configure.is_doubles
+              ? '2.5vh'
+              : '2.2vh',
         }}
       >
         {' '}
@@ -68,7 +72,11 @@ const BottomScore = () => {
       <div
         className={styles.awayTeamName}
         style={{
-          fontSize: gameStateData.configure.is_doubles ? '2.2vh' : '2.5vh',
+          fontSize:
+            gameStateData.mode === 'LAYER_0' ||
+            !gameStateData.configure.is_doubles
+              ? '2.5vh'
+              : '2.2vh',
         }}
       >
         {getAwaySideName(gameStateData, streamData)}

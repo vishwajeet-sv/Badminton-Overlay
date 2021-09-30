@@ -14,10 +14,12 @@ import getEventInfo from './api/getEventInfo';
 import './App.css';
 import { SOCKET_BASE_URL } from './constants';
 import {
+  getCurrentSetSummaryVisible,
   getIsBlankVisible,
   getIsBottomScoreVisible,
   getIsMatchSummaryVisible,
   getIsVersusVisible,
+  getPlayerSpecificInfoVisible,
 } from './globalServices/BadmintonGameServices';
 import CurrentSetSummary from './Components/CurrentSetSummary/CurrentSetSummary';
 import MatchSummary from './Components/MatchSummary/MatchSummary';
@@ -25,6 +27,7 @@ import Versus from './Components/Versus/Versus';
 import VOLImage from './Assets/VOL.png';
 import SVImage from './Assets/SV.png';
 import PDImage from './Assets/PD.png';
+import PlayerSpecificContribution from './Components/PlayerSpecificContribution/PlayerSpecificContribution';
 
 function App() {
   const [gameStateData, setGameStateData] = useState(null);
@@ -154,12 +157,22 @@ function App() {
 
               <div
                 className={
-                  false
+                  getCurrentSetSummaryVisible(gameStateData)
                     ? 'animate__animated animate__fadeIn animate__faster'
                     : 'hide'
                 }
               >
                 <CurrentSetSummary />
+              </div>
+
+              <div
+                className={
+                  getPlayerSpecificInfoVisible(gameStateData)
+                    ? 'animate__animated animate__fadeIn animate__faster'
+                    : 'hide'
+                }
+              >
+                <PlayerSpecificContribution />
               </div>
 
               <div
@@ -185,9 +198,9 @@ function App() {
               {true && (
                 <>
                   {' '}
-                  <img className={'pd'} src={PDImage} alt="sv" />
-                  <img className={'sv'} src={SVImage} alt="sv" />
-                  <img className={'vol'} src={VOLImage} alt="sv" />
+                  <img className="pd" src={PDImage} alt="sv" />
+                  <img className="sv" src={SVImage} alt="sv" />
+                  <img className="vol" src={VOLImage} alt="sv" />
                 </>
               )}
             </div>{' '}

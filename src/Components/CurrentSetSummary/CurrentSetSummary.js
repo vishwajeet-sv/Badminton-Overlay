@@ -39,120 +39,121 @@ const CurrentSetSummary = () => {
         {getHomeSideCurrentSetPoints(gameStateData)} -{' '}
         {getAwaySideCurrentSetPoints(gameStateData)}
       </div>
-      {!isPlayerProfilePicVisible(gameStateData, streamData) && (
-        <>
-          {!gameStateData.configure.is_doubles && (
-            <>
-              <div className={styles.homeSidePlayerTwoImage}>
-                {' '}
-                {getPlayersProfilePic(
-                  gameStateData.configure.home_side.player_two_id,
-                  streamData,
-                ) &&
-                  gameStateData.configure.is_doubles && (
+      {!isPlayerProfilePicVisible(gameStateData, streamData) &&
+        gameStateData.mode === 'LAYER_1' && (
+          <>
+            {!gameStateData.configure.is_doubles && (
+              <>
+                <div className={styles.homeSidePlayerTwoImage}>
+                  {' '}
+                  {getPlayersProfilePic(
+                    gameStateData.configure.home_side.player_two_id,
+                    streamData,
+                  ) &&
+                    gameStateData.configure.is_doubles && (
+                      <img
+                        className={styles.playerImage}
+                        src={`https://fhp-news-bucket.s3.amazonaws.com/${getPlayersProfilePic(
+                          gameStateData.configure.home_side.player_two_id,
+                          streamData,
+                        )}`}
+                        alt="vsDetailed"
+                      />
+                    )}
+                  {!getPlayersProfilePic(
+                    gameStateData.configure.home_side.player_two_id,
+                    streamData,
+                  ) && (
+                    <img
+                      className={styles.playerImage}
+                      src={DefaultPlayerImage}
+                      alt="vsDetailed"
+                    />
+                  )}
+                </div>
+                <div className={styles.awaySidePlayerTwoImage}>
+                  {' '}
+                  {getPlayersProfilePic(
+                    gameStateData.configure.away_side.player_two_id,
+                    streamData,
+                  ) && (
                     <img
                       className={styles.playerImage}
                       src={`https://fhp-news-bucket.s3.amazonaws.com/${getPlayersProfilePic(
-                        gameStateData.configure.home_side.player_two_id,
+                        gameStateData.configure.away_side.player_two_id,
                         streamData,
                       )}`}
                       alt="vsDetailed"
                     />
                   )}
-                {!getPlayersProfilePic(
-                  gameStateData.configure.home_side.player_two_id,
-                  streamData,
-                ) && (
-                  <img
-                    className={styles.playerImage}
-                    src={DefaultPlayerImage}
-                    alt="vsDetailed"
-                  />
-                )}
-              </div>
-              <div className={styles.awaySidePlayerTwoImage}>
-                {' '}
-                {getPlayersProfilePic(
-                  gameStateData.configure.away_side.player_two_id,
-                  streamData,
-                ) && (
-                  <img
-                    className={styles.playerImage}
-                    src={`https://fhp-news-bucket.s3.amazonaws.com/${getPlayersProfilePic(
-                      gameStateData.configure.away_side.player_two_id,
-                      streamData,
-                    )}`}
-                    alt="vsDetailed"
-                  />
-                )}
-                {!getPlayersProfilePic(
-                  gameStateData.configure.away_side.player_two_id,
-                  streamData,
-                ) && (
-                  <img
-                    className={styles.playerImage}
-                    src={DefaultPlayerImage}
-                    alt="vsDetailed"
-                  />
-                )}
-              </div>
-            </>
-          )}
+                  {!getPlayersProfilePic(
+                    gameStateData.configure.away_side.player_two_id,
+                    streamData,
+                  ) && (
+                    <img
+                      className={styles.playerImage}
+                      src={DefaultPlayerImage}
+                      alt="vsDetailed"
+                    />
+                  )}
+                </div>
+              </>
+            )}
 
-          <div className={styles.homeSidePlayerOneImage}>
-            {' '}
-            {getPlayersProfilePic(
-              gameStateData.configure.home_side.player_one_id,
-              streamData,
-            ) && (
-              <img
-                className={styles.playerImage}
-                src={`https://fhp-news-bucket.s3.amazonaws.com/${getPlayersProfilePic(
-                  gameStateData.configure.home_side.player_one_id,
-                  streamData,
-                )}`}
-                alt="vsDetailed"
-              />
-            )}
-            {!getPlayersProfilePic(
-              gameStateData.configure.home_side.player_one_id,
-              streamData,
-            ) && (
-              <img
-                className={styles.playerImage}
-                src={DefaultPlayerImage}
-                alt="vsDetailed"
-              />
-            )}
-          </div>
-          <div className={styles.awaySidePlayerOneImage}>
-            {' '}
-            {getPlayersProfilePic(
-              gameStateData.configure.away_side.player_one_id,
-              streamData,
-            ) && (
-              <img
-                className={styles.playerImage}
-                src={`https://fhp-news-bucket.s3.amazonaws.com/${getPlayersProfilePic(
-                  gameStateData.configure.away_side.player_one_id,
-                  streamData,
-                )}`}
-                alt="vsDetailed"
-              />
-            )}
-            {!getPlayersProfilePic(
-              gameStateData.configure.away_side.player_one_id,
-              streamData,
-            ) && (
-              <img
-                className={styles.playerImage}
-                src={DefaultPlayerImage}
-                alt="vsDetailed"
-              />
-            )}
-          </div>
-        </>
-      )}
+            <div className={styles.homeSidePlayerOneImage}>
+              {' '}
+              {getPlayersProfilePic(
+                gameStateData.configure.home_side.player_one_id,
+                streamData,
+              ) && (
+                <img
+                  className={styles.playerImage}
+                  src={`https://fhp-news-bucket.s3.amazonaws.com/${getPlayersProfilePic(
+                    gameStateData.configure.home_side.player_one_id,
+                    streamData,
+                  )}`}
+                  alt="vsDetailed"
+                />
+              )}
+              {!getPlayersProfilePic(
+                gameStateData.configure.home_side.player_one_id,
+                streamData,
+              ) && (
+                <img
+                  className={styles.playerImage}
+                  src={DefaultPlayerImage}
+                  alt="vsDetailed"
+                />
+              )}
+            </div>
+            <div className={styles.awaySidePlayerOneImage}>
+              {' '}
+              {getPlayersProfilePic(
+                gameStateData.configure.away_side.player_one_id,
+                streamData,
+              ) && (
+                <img
+                  className={styles.playerImage}
+                  src={`https://fhp-news-bucket.s3.amazonaws.com/${getPlayersProfilePic(
+                    gameStateData.configure.away_side.player_one_id,
+                    streamData,
+                  )}`}
+                  alt="vsDetailed"
+                />
+              )}
+              {!getPlayersProfilePic(
+                gameStateData.configure.away_side.player_one_id,
+                streamData,
+              ) && (
+                <img
+                  className={styles.playerImage}
+                  src={DefaultPlayerImage}
+                  alt="vsDetailed"
+                />
+              )}
+            </div>
+          </>
+        )}
 
       {isSizeBannerVisible(gameStateData) && (
         <img
