@@ -16,10 +16,15 @@ import { SOCKET_BASE_URL } from './constants';
 import {
   getIsBlankVisible,
   getIsBottomScoreVisible,
+  getIsMatchSummaryVisible,
+  getIsVersusVisible,
 } from './globalServices/BadmintonGameServices';
 import CurrentSetSummary from './Components/CurrentSetSummary/CurrentSetSummary';
 import MatchSummary from './Components/MatchSummary/MatchSummary';
 import Versus from './Components/Versus/Versus';
+import VOLImage from './Assets/VOL.png';
+import SVImage from './Assets/SV.png';
+import PDImage from './Assets/PD.png';
 
 function App() {
   const [gameStateData, setGameStateData] = useState(null);
@@ -129,7 +134,7 @@ function App() {
             <div style={{ fontFamily: 'poppin-Medium' }}>
               <div
                 className={
-                  false
+                  getIsVersusVisible(gameStateData)
                     ? 'animate__animated animate__fadeIn animate__faster'
                     : 'hide'
                 }
@@ -139,7 +144,7 @@ function App() {
 
               <div
                 className={
-                  getIsBottomScoreVisible(gameStateData) || true
+                  getIsBottomScoreVisible(gameStateData)
                     ? 'animate__animated animate__fadeIn animate__faster'
                     : 'hide'
                 }
@@ -159,7 +164,7 @@ function App() {
 
               <div
                 className={
-                  true
+                  getIsMatchSummaryVisible(gameStateData)
                     ? 'animate__animated animate__fadeIn animate__faster'
                     : 'hide'
                 }
@@ -177,6 +182,14 @@ function App() {
                     imageUrl={gameStateData.current_ads.banner_ad_url}
                   />
                 )}
+              {true && (
+                <>
+                  {' '}
+                  <img className={'pd'} src={PDImage} alt="sv" />
+                  <img className={'sv'} src={SVImage} alt="sv" />
+                  <img className={'vol'} src={VOLImage} alt="sv" />
+                </>
+              )}
             </div>{' '}
             {gameStateData.current_ads.is_video_ad_visible && (
               <FullScreenBannerAds

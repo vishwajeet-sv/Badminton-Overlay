@@ -22,7 +22,7 @@ import {
 const BottomScore = () => {
   const { gameStateData } = useContext(GameStateDataContext);
   const { streamData } = useContext(StreamDataContext);
-  console.log('dvjbdsvidj', streamData);
+
   return (
     <>
       <img
@@ -47,7 +47,12 @@ const BottomScore = () => {
         <img className={styles.p2IndicatorImage} src={IndicatorImage} alt="i" />
       )}
 
-      <div className={styles.homeTeamName}>
+      <div
+        className={styles.homeTeamName}
+        style={{
+          fontSize: gameStateData.configure.is_doubles ? '2.2vh' : '2.5vh',
+        }}
+      >
         {' '}
         {getHomeSideName(gameStateData, streamData)}
       </div>
@@ -60,7 +65,12 @@ const BottomScore = () => {
         {getHomeSideCurrentSetPoints(gameStateData)}
       </div>
 
-      <div className={styles.awayTeamName}>
+      <div
+        className={styles.awayTeamName}
+        style={{
+          fontSize: gameStateData.configure.is_doubles ? '2.2vh' : '2.5vh',
+        }}
+      >
         {getAwaySideName(gameStateData, streamData)}
       </div>
 

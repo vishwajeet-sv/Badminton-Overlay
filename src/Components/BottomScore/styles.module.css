@@ -30,7 +30,6 @@
 }
 .homeTeamName,
 .awayTeamName {
-  font-size: 2.5vh;
   color: aliceblue;
   position: absolute;
   left: 7vw;
@@ -86,4 +85,26 @@
   position: absolute;
   width: 100%;
   top: 86.8vh;
+}
+
+.sv {
+  position: absolute;
+  top: 80vh;
+  height: 12vh;
+  right: 8vw;
+  z-index: 100;
+}
+.pd {
+  position: absolute;
+  top: 6vh;
+  height: 9vh;
+  right: 5vw;
+  z-index: 100;
+}
+.vol {
+  position: absolute;
+  top: 14vh;
+  height: 2vh;
+  right: 5.75vw;
+  z-index: 100;
 }

@@ -92,6 +92,20 @@ const getIsBottomScoreVisible = gameState => {
   return visualFlags.is_score_visible;
 };
 
+const getIsVersusVisible = gameState => {
+  const visualFlags =
+    gameState.mode === 'LAYER_0'
+      ? gameState.layer_zero_game_state.visual_flags
+      : gameState.visual_flags;
+  return visualFlags.is_versus_visible;
+};
+
+const getIsMatchSummaryVisible = gameState => {
+  return gameState.mode === 'LAYER_0'
+    ? false
+    : gameState.visual_flags.is_match_summary_visible;
+};
+
 const getHomeSideName = (gameState, streamData) => {
   if (gameState.mode === 'LAYER_0')
     return gameState.layer_zero_game_state.p1_name;
@@ -246,4 +260,6 @@ export {
   getBannerUrl,
   isHomeSideServing,
   isPlayerProfilePicVisible,
+  getIsVersusVisible,
+  getIsMatchSummaryVisible,
 };

@@ -39,9 +39,9 @@ const CurrentSetSummary = () => {
         {getHomeSideCurrentSetPoints(gameStateData)} -{' '}
         {getAwaySideCurrentSetPoints(gameStateData)}
       </div>
-      {isPlayerProfilePicVisible(gameStateData, streamData) && (
+      {!isPlayerProfilePicVisible(gameStateData, streamData) && (
         <>
-          {gameStateData.configure.is_doubles && (
+          {!gameStateData.configure.is_doubles && (
             <>
               <div className={styles.homeSidePlayerTwoImage}>
                 {' '}

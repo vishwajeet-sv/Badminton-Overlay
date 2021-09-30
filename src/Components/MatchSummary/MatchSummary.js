@@ -43,18 +43,18 @@ const MatchSummary = () => {
 
         <div className={styles.row1Points}>
           <span className={styles.rowPoints}>
-            {gameStateData.home_side_stats.points_won.off_regular}
+            {gameStateData.home_side_stats.points_won.total}
           </span>
-          <div className={styles.rowHeading}>Regular</div>{' '}
+          <div className={styles.rowHeading}>total points</div>{' '}
           <span className={styles.rowPoints}>
-            {gameStateData.away_side_stats.points_won.off_regular}
+            {gameStateData.away_side_stats.points_won.total}
           </span>
         </div>
         <div className={styles.row2Points}>
           <span className={styles.rowPoints}>
             {gameStateData.home_side_stats.points_won.off_smash_shots}
           </span>
-          <div className={styles.rowHeading}>Smash shot</div>{' '}
+          <div className={styles.rowHeading}>Smash Points</div>{' '}
           <span className={styles.rowPoints}>
             {gameStateData.away_side_stats.points_won.off_smash_shots}
           </span>
@@ -63,18 +63,18 @@ const MatchSummary = () => {
           <span className={styles.rowPoints}>
             {gameStateData.home_side_stats.points_won.off_drop_shots}
           </span>
-          <div className={styles.rowHeading}>Drop Shot</div>{' '}
+          <div className={styles.rowHeading}>Drop Points</div>{' '}
           <span className={styles.rowPoints}>
             {gameStateData.away_side_stats.points_won.off_drop_shots}
           </span>
         </div>
         <div className={styles.row4Points}>
           <span className={styles.rowPoints}>
-            {gameStateData.home_side_stats.points_won.off_unforced_errors}
+            {gameStateData.home_side_stats.points_lost.off_unforced_errors}
           </span>
-          <div className={styles.rowHeading}>Unforced error</div>{' '}
+          <div className={styles.rowHeading}>Unforced errors</div>{' '}
           <span className={styles.rowPoints}>
-            {gameStateData.away_side_stats.points_won.off_unforced_errors}
+            {gameStateData.away_side_stats.points_lost.off_unforced_errors}
           </span>
         </div>
         {isSizeBannerVisible(gameStateData) && (
