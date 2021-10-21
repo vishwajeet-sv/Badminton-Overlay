@@ -126,10 +126,28 @@ function App() {
     return '';
   }, []);
 
+  const isLevelOneInfoAvailable = () => {
+    if (!gameStateData) return false;
+    if (gameStateData.mode === 'LAYER_0') return true;
+    if (gameStateData.mode === 'LAYER_1' && gameStateData.configure)
+      return true;
+    return false;
+  };
+  const isLevelZeroVisualFlagsVisible = () => {
+    if (!gameStateData) return false;
+    if (gameStateData.mode === 'LAYER_1') return true;
+    if (gameStateData.mode === 'LAYER_0' && gameStateData.layer_zero_game_state)
+      return true;
+
+    return false;
+  };
+
   return (
     gameStateData &&
     gameStateData.current_ads &&
-    streamData && (
+    streamData &&
+    isLevelOneInfoAvailable() &&
+    isLevelZeroVisualFlagsVisible() && (
       <GameStateDataContext.Provider value={GameStateDataContextValue}>
         <StreamDataContext.Provider value={TeamInfoDataContextValue}>
           <EventDataContext.Provider value={EventInfoDataContextValue}>
@@ -198,9 +216,14 @@ function App() {
               {true && (
                 <>
                   {' '}
-                  <img className="pd" src={PDImage} alt="sv" />
-                  <img className="sv" src={SVImage} alt="sv" />
-                  <img className="vol" src={VOLImage} alt="sv" />
+                  {streamData.event_id === 'EVENT_614c0dccfaab2944110df0f2' && (
+                    <>
+                      {' '}
+                      <img className="pd" src={PDImage} alt="sv" />
+                      <img className="vol" src={VOLImage} alt="sv" />
+                      <img className="sv" src={SVImage} alt="sv" />
+                    </>
+                  )}
                 </>
               )}
             </div>{' '}

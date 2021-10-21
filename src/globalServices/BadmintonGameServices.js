@@ -73,10 +73,15 @@ const getPlayersProfilePic = (playerId, teamsInfoData) => {
 
 const isHomeSideServing = gameState => {
   if (gameState.mode === 'LAYER_0')
-    return gameState.layer_zero_game_state.p1_name;
+    return gameState.layer_zero_game_state.is_p1_serving;
   return gameState.set_data.is_home_side_serving;
 };
 
+const isAwaySideServing = gameState => {
+  if (gameState.mode === 'LAYER_0')
+    return !gameState.layer_zero_game_state.is_p1_serving;
+  return !gameState.set_data.is_home_side_serving;
+};
 const getIsBlankVisible = gameState => {
   const visualFlags =
     gameState.mode === 'LAYER_0'
@@ -255,6 +260,7 @@ const isPlayerProfilePicVisible = (gameState, streamData) => {
 export default getIsBlankVisible;
 export {
   TeamNameAbrivation,
+  isAwaySideServing,
   getFirstPlayerName,
   getLastPlayerName,
   getFullPlayerName,

@@ -15,6 +15,7 @@ import {
   getHomeSideCurrentSetPoints,
   getHomeSideName,
   getHomeSideSetWonPoints,
+  isAwaySideServing,
   isHomeSideServing,
   isSizeBannerVisible,
 } from '../../globalServices/BadmintonGameServices';
@@ -43,7 +44,7 @@ const BottomScore = () => {
       {isHomeSideServing(gameStateData) && (
         <img className={styles.p1IndicatorImage} src={IndicatorImage} alt="i" />
       )}
-      {!isHomeSideServing(gameStateData) && (
+      {isAwaySideServing(gameStateData) && (
         <img className={styles.p2IndicatorImage} src={IndicatorImage} alt="i" />
       )}
 

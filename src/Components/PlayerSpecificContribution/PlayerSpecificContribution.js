@@ -52,7 +52,7 @@ const PlayerSpecificContribution = () => {
             {
               gameStateData.player_stats_map[
                 gameStateData.visual_flags.specific_player_contribution_id
-              ].points_won.total
+              ].points_won.off_smash_shots
             }
           </span>
         </div>
@@ -62,7 +62,7 @@ const PlayerSpecificContribution = () => {
             {
               gameStateData.player_stats_map[
                 gameStateData.visual_flags.specific_player_contribution_id
-              ].points_won.total
+              ].points_won.off_drop_shots
             }
           </span>
         </div>
@@ -72,7 +72,7 @@ const PlayerSpecificContribution = () => {
             {
               gameStateData.player_stats_map[
                 gameStateData.visual_flags.specific_player_contribution_id
-              ].points_won.total
+              ].points_lost.off_unforced_errors
             }
           </span>
         </div>
