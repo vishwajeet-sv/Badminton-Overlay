@@ -1,0 +1,15 @@
+.channelLogo,
+.svLogo {
+  position: absolute;
+  height: 11vh;
+  left: 2vw;
+  top: 86vh;
+  z-index: 1000;
+  opacity: 0.85;
+  border-radius: 2px;
+}
+.svLogo {
+  left: 90vw;
+  top: 82vh;
+  height: 18vh;
+}

@@ -27,6 +27,7 @@ import Versus from './Components/Versus/Versus';
 import VOLImage from './Assets/VOL.png';
 import SVImage from './Assets/SV.png';
 import PDImage from './Assets/PD.png';
+import styles from './styles.module.css';
 import PlayerSpecificContribution from './Components/PlayerSpecificContribution/PlayerSpecificContribution';
 
 function App() {
@@ -227,6 +228,23 @@ function App() {
                 </>
               )}
             </div>{' '}
+            {streamData.channel_image &&
+              (gameStateData.mode !== 'LAYER_0'
+                ? gameStateData.visual_flags.is_channel_logo_visible
+                : gameStateData.layer_zero_game_state.visual_flags
+                    .is_channel_logo_visible) && (
+                <img
+                  className={styles.channelLogo}
+                  src={`https://fhp-news-bucket.s3.amazonaws.com/${streamData.channel_image}`}
+                  alt="logo"
+                />
+              )}
+            {(gameStateData.mode !== 'LAYER_0'
+              ? gameStateData.visual_flags.is_sv_logo_visible
+              : gameStateData.layer_zero_game_state.visual_flags
+                  .is_sv_logo_visible) && (
+              <img className={styles.svLogo} src={SVImage} alt="logo" />
+            )}
             {gameStateData.current_ads.is_video_ad_visible && (
               <FullScreenBannerAds
                 videoUrl={gameStateData.current_ads.video_ad_url}
